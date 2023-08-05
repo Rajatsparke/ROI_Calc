@@ -13,8 +13,8 @@ hours_spent = st.slider('Hours spent per person per day', 0, 8, 0)
 hourly_rate = st.number_input('Hourly rate per person ($)', value=0)
 
 # Calculations
-yearly_manual_cost = head_count * hours_spent * hourly_rate * 365
-yearly_manual_hours = head_count * hours_spent * 365
+yearly_manual_cost = head_count * hours_spent * hourly_rate * 240
+yearly_manual_hours = head_count * hours_spent * 240
 
 yearly_automated_cost = 0.1 * yearly_manual_cost
 
@@ -26,7 +26,7 @@ def automated_hours(hours_per_day):
     if yearly_manual_hours <= 0:
         return 0
     else:
-        return (hours_per_day/4) *365
+        return (hours_per_day/4) *240
 
 yearly_automated_hours = automated_hours(temp_hours)
 
