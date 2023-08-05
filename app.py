@@ -23,7 +23,7 @@ total_savings = yearly_manual_cost - yearly_automated_cost
 temp_hours = head_count * hours_spent
 
 def automated_hours(hours_per_day):
-    if yearly_manual_hours <= 0:
+    if hours_per_day < 2:
         return 0
     else:
         return (hours_per_day/4) *240
