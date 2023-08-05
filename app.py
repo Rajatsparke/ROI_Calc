@@ -33,26 +33,27 @@ yearly_automated_hours = automated_hours(temp_hours)
 # Display
 #st.write('Yearly Manual Cost: $', yearly_manual_cost)
 #st.write('Yearly Automated Cost: $', yearly_automated_cost
-st.metric('My metric', 42, 2)
-st.info(f"{total_savings} $ per year")
+#st.metric('My metric', 42, 2)
+#st.info(f"{total_savings} $ per year")
 
-st.metric(label="Total Savings: $", value= total_savings)
 
-st.write('Total Savings: $', total_savings)
 
-st.write('Yearly Manual Hours Spent: ', yearly_manual_hours)
-st.write('Yearly Automated Hours Spent: ', yearly_automated_hours)
+#st.write('Total Savings: $', total_savings)
+
+#st.write('Yearly Manual Hours Spent: ', yearly_manual_hours)
+#st.write('Yearly Automated Hours Spent: ', yearly_automated_hours)
 
 # Graphs
 fig, ax = plt.subplots(2, 1)
-
 # Cost comparison per annum ($)
+st.header('Cost Comparison per annum')
 ax[0].bar(['Automated', 'Manual'], [yearly_automated_cost, yearly_manual_cost])
 ax[0].set_title('Cost Comparison per Annum ($)')
+st.metric(label="Total Savings ($ per year) :", value= total_savings)
 
-# Effort comparison per annum (Manhours) 
+st.header('Effort Comparison per annum')
 ax[1].bar(['Automated', 'Manual'], [yearly_automated_hours, yearly_manual_hours])
-ax[1].set_title('Effort Comparison per Annum (Manhours)')
+ax[1].set_title('Effort Comparison per annum')
 
 plt.tight_layout()
 st.pyplot(fig)
