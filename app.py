@@ -6,11 +6,11 @@ import matplotlib.pyplot as plt
 st.title('ROI Calculator')
 
 # Sliders
-head_count = st.slider('Head Count', 1, 30, 1)
-hours_spent = st.slider('Hours spent per person per day', 1, 8, 1)
+head_count = st.slider('Head Count', 0, 30, 1)
+hours_spent = st.slider('Hours spent per person per day', 0, 8, 1)
 
 # Input
-hourly_rate = st.number_input('Hourly rate per person ($)', value=10)
+hourly_rate = st.number_input('Hourly rate per person ($)', value=0)
 
 # Calculations
 yearly_manual_cost = head_count * hours_spent * hourly_rate * 365
