@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 st.title('ROI Calculator')
 
 # Sliders
-head_count = st.slider('Head Count', 0, 30, 1)
-hours_spent = st.slider('Hours spent per person per day', 0, 8, 1)
+head_count = st.slider('Head Count', 0, 30, 0)
+hours_spent = st.slider('Hours spent per person per day', 0, 8, 0)
 
 # Input
 hourly_rate = st.number_input('Hourly rate per person ($)', value=0)
