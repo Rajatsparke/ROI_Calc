@@ -26,7 +26,7 @@ def automated_hours(hours_per_day):
     if hours_per_day < 2:
         return 0
     else:
-        return (hours_per_day/4) *240
+        return (hours_per_day/2) *240
 
 yearly_automated_hours = automated_hours(temp_hours)
 
