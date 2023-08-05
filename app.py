@@ -31,8 +31,10 @@ def automated_hours(hours_per_day):
 yearly_automated_hours = automated_hours(temp_hours)
 
 # Display
-st.write('Yearly Manual Cost: $', yearly_manual_cost)
-st.write('Yearly Automated Cost: $', yearly_automated_cost)
+#st.write('Yearly Manual Cost: $', yearly_manual_cost)
+#st.write('Yearly Automated Cost: $', yearly_automated_cost
+st.metric(label="'Total Savings: $", value= total_savings)
+
 st.write('Total Savings: $', total_savings)
 
 st.write('Yearly Manual Hours Spent: ', yearly_manual_hours)
