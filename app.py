@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 st.title('ROI Calculator')
 
 # Sliders
-head_count = st.slider('Head Count', 1, 100, 1)
-hours_spent = st.slider('Hours spent per person per day', 1, 24, 1)
+head_count = st.slider('Head Count', 1, 30, 1)
+hours_spent = st.slider('Hours spent per person per day', 1, 8, 1)
 
 # Input
 hourly_rate = st.number_input('Hourly rate per person ($)', value=10)
@@ -20,20 +20,15 @@ yearly_automated_cost = 0.1 * yearly_manual_cost
 
 total_savings = yearly_manual_cost - yearly_automated_cost
 
-def automated_hours(yearly_manual_hours):
-    if yearly_manual_hours <= 6:
-        return 240
-    elif yearly_manual_hours <= 14:
-        return 480
-    elif yearly_manual_hours <= 30:
-        return 960
-    elif yearly_manual_hours <= 60:
-        return 1920
-    else:
-        # And so on...
-        return 0
+temp_hours = head_count * hours_spent
 
-yearly_automated_hours = automated_hours(yearly_manual_hours)
+def automated_hours(hours_per_day):
+    if yearly_manual_hours <= 0:
+        return 0
+    else:
+        return (hours_per_day/4) *365
+
+yearly_automated_hours = automated_hours(temp_hours)
 
 # Display
 st.write('Yearly Manual Cost: $', yearly_manual_cost)
