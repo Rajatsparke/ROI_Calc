@@ -34,8 +34,9 @@ yearly_automated_hours = automated_hours(temp_hours)
 #st.write('Yearly Manual Cost: $', yearly_manual_cost)
 #st.write('Yearly Automated Cost: $', yearly_automated_cost
 st.metric('My metric', 42, 2)
+st.info(f"{total_savings} $ per year")
 
-st.metric(label="'Total Savings: $", value= total_savings)
+st.metric(label="Total Savings: $", value= total_savings)
 
 st.write('Total Savings: $', total_savings)
 
